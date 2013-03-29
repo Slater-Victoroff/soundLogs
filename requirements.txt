@@ -1,0 +1,2 @@
+pyao (apt-get install python-pyao)
+wavebender (git@github.com:zacharydenton/wavebender.git)
