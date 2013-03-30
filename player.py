@@ -3,14 +3,15 @@ import audio
 from itertools import *
 import operator
 
-WEIGHTS = [1, 1, 1, 10, 15]
+WEIGHTS = [1.0/1000, 1, 1.0/100, 1.0/10, 1.0/10]
 BASE_NOTES = [audio.NOTES[note] for note in ['C','D','E','G','A']]
 
 def play_data(data):
     weighted = map(operator.mul, data, WEIGHTS)
     notes = map(operator.add, BASE_NOTES, weighted)
     notes = [audio.NOTES['C']] + notes  # So we always have a baseline
-    audio.play(notes, duration=.15)
+    print notes
+    audio.play(notes, duration=.2)
 
 if __name__ == "__main__":
     lines = [
